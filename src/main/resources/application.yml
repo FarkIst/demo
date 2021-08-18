@@ -14,8 +14,5 @@ datasources:
     schema-generate:
     dialect: H2
 
-    jpa:
-  default:
-    entity-scan:
-        packages: 'com.example'
+
 
