@@ -36,8 +36,12 @@ class DemoTest {
 
         //Update
         bookRepository.updateByName("Inferno", "Someone elses Inferno", 96 )
+        var updated = bookRepository.findByName("Inferno")
+        assertEquals("Someone elses Inferno", updated.description)
+        assertEquals(96, updated.price)
 
         //Delete
         bookRepository.delete("Inferno")
+        assertEquals(0, bookRepository.count())
     }
 }

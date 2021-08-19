@@ -2,17 +2,18 @@ package com.example
 
 import io.micronaut.context.annotation.Executable
 import io.micronaut.data.annotation.*
-import io.micronaut.data.jdbc.annotation.JdbcRepository
-import io.micronaut.data.model.query.builder.sql.Dialect
+import io.micronaut.data.model.*
 import io.micronaut.data.repository.CrudRepository
+import com.example.Book
 
-
-@JdbcRepository(dialect = Dialect.H2)
+@Repository 
 interface BookRepository : CrudRepository<Book, Long> { 
     @Executable
-    fun find(id: Id): Book
+    fun find(name: String): Book
 
     fun findByName(name: String): Book
+
+    fun findByPrice(price: Int): Book
 
     fun save(entity: Book): Book
 

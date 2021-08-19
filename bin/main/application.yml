@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: demo
+
+  server:
+    port: 8080
+    
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    schema-generate:
+    dialect: H2
+
+    jpa:
+  default:
+    entity-scan:
+        packages: 'com.example'
+
